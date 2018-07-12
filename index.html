@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+	<head>
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106765656-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments)};
+			gtag('js', new Date());
+			gtag('config', 'UA-106765656-1');
+		</script> -->
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NLKZFJJ');</script>
+		<!-- End Google Tag Manager -->
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ripple XRP Paper Wallet</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:url" content="https://ripplewallet.tech" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Ripple XRP Paper Wallet" />
+		<meta property="og:description" content="Create your own Ripple paper wallet for safe long-term storage of your investment." />
+		<meta property="og:image" content="https://ripplewallet.tech/img/kitten.jpg" />
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="apple-touch-icon" href="icon.png">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+		<link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="css/bulma.css">
+		<script src="js/magic.js"></script>
+	</head>
+	<body onload="generate()">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLKZFJJ"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<section class="section hero" id="particles-js">
+			<div class="float-content">
+				<div class="container is-narrow">
+					<h1 class="title">Generate A Ripple Paper Wallet</h1>
+					<span class="disc">Create your own Ripple paper wallet for safe long-term storage of your investment.</span>
+					<br>
+					<div class="wallet-card" id="paper">
+						<!-- ======================= -->
+						<!-- Where the magic happens -->
+						<!-- ======================= -->
+						<div id="left">
+							<span>Ripple Address</span>
+							<div id="qraddr" class="qr"></div>
+						</div>
+						<div id="address"><span id="addrtext"></span></div>
+						<div id="void"></div>
+						<div id="secret"><span id="secrtext"></span></div>
+						<div id="right">
+							<span>Secret Key - Keep Safe</span>
+							<div id="qrsecr" class="qr"></div>
+						</div>
+						<div class="wallet-info">
+							<div class="wallet-copy">
+								All you need to know about Ripple paper wallets, Crypto currency security and how to restore your funds to start trading. Visit - ripplewallet.tech
+							</div>
+							<div class="wallet-logo">
+								<!-- <img class="logo initial_logo" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/logo/ripple-logo-white.png"> -->
+							</div>
+						</div>
+						<!-- ======================= -->
+						<!-- Where the magic happens -->
+						<!-- ======================= -->
+					</div>
+					<br><br>
+					<div class="button-holder has-text-centered">
+						<button class="button is-primary is-medium" onclick="generate()" title="Generate new">Generate XRP Wallet &nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button> &nbsp;<button class="button is-primary is-medium" onclick="window.print()" title="Print">Print XRP Wallet &nbsp;<i class="fa fa-print" aria-hidden="true"></i></button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container is-narrow">
+				<h1 class="title">Wallet FAQ's</h1>
+				<span class="disc">All you need to know about Ripple paper wallets, Crypto currency security and how to restore your funds to start trading.</span>
+				<br>
+				<ul class="accordion">
+					<li>
+						<a class="toggle" href="javascript:void(0);">What are the benifits of a Ripple paper wallet?</a>
+						<ul class="inner">
+							Coming soon!
+						</ul>
+					</li>
+					<li>
+						<a class="toggle" href="javascript:void(0);">Is my Ripple safe in a XRP paper wallet?</a>
+						<ul class="inner">
+							Coming soon!
+						</ul>
+					</li>
+					<li>
+						<a class="toggle" href="javascript:void(0);">How to restore funds from a paper wallet?</a>
+						<ul class="inner">
+							<p><strong>Option 1</strong> - Use the Ripply Android app</p><br>
+							<p>Download the app: https://play.google.com/store/apps/details?id=com.ripplewallet.ripplewallet
+							Scan the secret key QR to import it
+							Now you are able to send your XRP</p>
+							<br>
+							<p><strong>Option 2</strong> - Use one of the light Ripple clients</p><br>
+							<p>This one has a nice interface: https://yxxyun.github.io/ripple-wallet/
+							This one is pretty raw & minimalistic: https://jatchili.github.io/minimalist-ripple-client/</p>
+							<br>
+							<p><strong>Option 3</strong> - Use GateHub (requires identity verification)</p><br>
+							<p>Register at https://gatehub.net
+							Navigate to Wallets and click + (Add New) and import your Ripple secret key.</p>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container is-narrow">
+				<h1 class="title">Ripple Current Stats</h1>
+				<span class="disc">XRP current stats and forecast.</span>
+				<br><br>
+			</div>
+			<div class="container is-narrow">
+				<div class="columns">
+					<div class="column is-8">
+						<div class="ripple-stats">
+							<!-- <iframe src="" height="200" width="300"></iframe> -->
+							<!-- <style type="text/css">
+								.intrinsic-container {
+									position: relative;
+									height: 0;
+									overflow: hidden;
+									padding-bottom: 56.25%;
+								}
+								.intrinsic-container iframe {
+									position: absolute;
+									top:0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+								}
+							</style>
+							<div class="intrinsic-container">
+								<iframe src="https://api.tech/" allowfullscreen></iframe>
+							</div> -->
+							<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+							<div class="coinmarketcap-currency-widget" data-currency="ripple" data-base="USD"  data-secondary="BTC"></div>
+						</div>
+					</div>
+					<div class="column is-4">
+						<!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x500"></a> -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-footer">
+			<div class="container is-narrow">
+				<h1 class="title">Donations Welcome</h1>
+				<span class="disc">Help us keep this site alive, If you like what you see or if you've found this site useful then please consider sending us a donation for upkeep.</span>
+				<br>
+				<div class="donation-block">
+					XRP Donations - rUSUWcQq8trgtGsjwYqejWAMAVZ3H24f1t
+				</div>
+			</div>
+
+			<div class="container is-narrow">
+				<br>
+				Dev by Disruptiv Co. | Terms of Use | Copyright in Code | Secured By Let's Encrypt
+			</div>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script src="js/main.js"></script>
+		<script type="text/javascript">
+			$('.toggle').click(function(e) {
+				e.preventDefault();
+
+				var $this = $(this);
+
+				if ($this.next().hasClass('show')) {
+					$this.next().removeClass('show');
+					$this.next().slideUp(350);
+				} else {
+					$this.parent().parent().find('li .inner').removeClass('show');
+					$this.parent().parent().find('li .inner').slideUp(350);
+					$this.next().toggleClass('show');
+					$this.next().slideToggle(350);
+				}
+
+			});
+		</script>
+	</body>
+</html>
