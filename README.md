@@ -1,6 +1,6 @@
 # ripple-wallet
 
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-mix.svg" alt="Laravel Mix"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jasonloeve/ripplewallet/master/development/img/snapshot.png" alt="XRP Wallet Design"></p>
 
 ## Project setup
 ```
