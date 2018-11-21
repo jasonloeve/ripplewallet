@@ -6,7 +6,7 @@
             <br>
             <ul class="accordion">
                 <li v-for="faq in faqs" v-bind:key="faq.id">
-                    <a class="toggle" @click="toggle">{{ faq.faqQuestion }}</a>
+                    <a class="toggle" @click="toggle">{{ faq.faqQuestion }} <i class="fas fa-plus"></i></a>
                     <ul class="inner">
                         {{ faq.faqAnswer }}
                     </ul>
