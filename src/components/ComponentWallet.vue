@@ -8,19 +8,25 @@
                 <span>Ripple Address</span>
                 <div id="qraddr" class="qr"></div>
             </div>
-            <div id="address"><span id="addrtext"></span></div>
+            <div id="address">
+                <span id="addrtext"></span>
+            </div>
             <div id="void"></div>
-            <div id="secret"><span id="secrtext"></span></div>
+            <div id="secret">
+                <span id="secrtext"></span>
+            </div>
             <div id="right">
                 <span>Secret Key - Keep Safe</span>
                 <div id="qrsecr" class="qr"></div>
             </div>
+
+
             <div class="wallet-info">
                 <div class="wallet-copy">
-                    All you need to know about Ripple paper wallets, Crypto currency security and how to restore your funds to start trading.
+                    {{ walletCopy }}
                 </div>
                 <div class="wallet-logo">
-                    <img class="logo initial_logo" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/logo/ripple-logo-white.png">
+                    <!--<img class="logo initial_logo" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/logo/ripple-logo-white.png">-->
                 </div>
             </div>
             <!-- ======================= -->
@@ -28,24 +34,105 @@
             <!-- ======================= -->
         </div>
         <br><br>
+
+
         <div class="button-holder has-text-centered">
-            <button class="button is-primary is-medium" onclick="generate()" title="Generate new">Generate XRP Wallet &nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button> &nbsp;<button class="button is-primary is-medium" onclick="window.print()" title="Print">Print XRP Wallet &nbsp;<i class="fa fa-print" aria-hidden="true"></i></button>
+            <button class="button is-primary is-medium" title="Generate new" @click="generate">
+                Generate XRP Wallet &nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i>
+            </button> &nbsp;
+            <button class="button is-primary is-medium" onclick="window.print()" title="Print">
+                Print XRP Wallet &nbsp;<i class="fa fa-print" aria-hidden="true"></i>
+            </button>
         </div>
+
+
     </div>
 </template>
 
 <script>
+
+    import '../../node_modules/ripple-keypairs/distrib/npm/index';
+
     export default {
         name: 'ComponentWallet',
         data () {
             return {
                 sectionHeading: 'Generate A Ripple Paper Wallet',
                 sectionSubHeading: 'Create your own Ripple paper wallet for safe long-term storage of your investment.',
+                walletCopy: 'All you need to know about Ripple paper wallets, Crypto currency security and how to restore your funds to start trading.',
             }
         },
+        methods: {
+
+            // methodA: function () {
+            //     console.log('hello');
+            // },
+            // methodB: function () {
+            //     // calling methodA
+            //     vm.methodA();
+            // }
+
+            generateWallet: function () {
+
+                alert('Generate Triggered');
+
+                const seed = generateSeed();
+                const keypair = deriveKeypair(seed);
+                const address = deriveAddress(keypair.publicKey);
+                return {"address" : address, "secret" : seed};
+                
+            },
+
+            generate: function () {
+
+                const wallet = this.generateWallet();
+
+                // ==============
+                // Generate QR for Public & Private addresses
+                // ==============
+
+                document.getElementById('qraddr').innerHTML = '';
+                document.getElementById('qrsecr').innerHTML = '';
+                const qraddr = new QRCode("qraddr");
+                const qrsecr = new QRCode("qrsecr");
+                qraddr.makeCode(wallet["address"]);
+                document.getElementById('addrtext').innerHTML = wallet['address'];
+                qrsecr.makeCode(wallet["secret"]);
+                document.getElementById('secrtext').innerHTML = wallet['secret'];
+            },
+
+
+
+        }
     }
+
+
+
+
 </script>
 
 <style>
+
+    .wallet-card {
+        position: relative;
+        color: black;
+        margin: auto;
+        display: block;
+        background-image: url('../assets/img/xrp-moon.png') ;
+        background-color: #0594ff;
+        background-size: 180px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: 1px solid #007ad6;
+        border-right: none;
+        border-left: none;
+        padding: 30px;
+        width: 100%;
+        height: 320px;
+        z-index: 999999;
+        border-radius: 0;
+        -webkit-box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+    }
 
 </style>

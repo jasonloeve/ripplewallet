@@ -12,7 +12,7 @@
     "bulma": "^0.7.2",
     "jquery": "^3.3.1",
     "particles.js": "^2.0.0",
-    "particlesjs": "^2.2.3",
+    "qrcode.js": "0.0.1",
     "ripple-keypairs": "^0.11.0",
     "vue": "^2.5.17"
   },
