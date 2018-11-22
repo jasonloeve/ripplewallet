@@ -7,6 +7,9 @@
             <div id="left">
                 <span>Ripple Address</span>
                 <div id="qraddr" class="qr"></div>
+
+                <!--Temp testing-->
+                <div id="qrcode" class="qr"></div>
             </div>
             <div id="address">
                 <span id="addrtext"></span>
@@ -46,12 +49,44 @@
         </div>
 
 
+
+
     </div>
 </template>
 
+
+
+
+
 <script>
 
-    import '../../node_modules/ripple-keypairs/distrib/npm/index';
+    import QRCode from 'qrcode-js-package';
+
+    window.onload = function () {
+
+        document.getElementById("qrcode").innerHTML = '';
+
+        const qrcode = new QRCode("qrcode");
+
+        qrcode.makeCode("rGiZXoQavp6BJQhJnoXuvWzq4a4B33NWjX");
+
+        // document.getElementById('qraddr').innerHTML = '';
+        // document.getElementById('qrsecr').innerHTML = '';
+        // const qraddr = new QRCode("qraddr");
+        // const qrsecr = new QRCode("qrsecr");
+        // qraddr.makeCode(wallet["address"]);
+        // qrsecr.makeCode(wallet["secret"]);
+        // document.getElementById('addrtext').innerHTML = wallet['address'];
+        // document.getElementById('secrtext').innerHTML = wallet['secret'];
+
+    };
+
+
+
+
+
+
+
 
     export default {
         name: 'ComponentWallet',
@@ -72,38 +107,49 @@
             //     vm.methodA();
             // }
 
-            generateWallet: function () {
-
-                alert('Generate Triggered');
-
-                const seed = generateSeed();
-                const keypair = deriveKeypair(seed);
-                const address = deriveAddress(keypair.publicKey);
-                return {"address" : address, "secret" : seed};
-                
-            },
-
+            // generateWallet: function () {
+            //
+            //     alert('Generate Triggered');
+            //
+            //     const seed = generateSeed();
+            //     const keypair = deriveKeypair(seed);
+            //     const address = deriveAddress(keypair.publicKey);
+            //     return {"address" : address, "secret" : seed};
+            //
+            // },
+            //
             generate: function () {
 
-                const wallet = this.generateWallet();
+                //const wallet = this.generateWallet();
 
                 // ==============
                 // Generate QR for Public & Private addresses
                 // ==============
 
-                document.getElementById('qraddr').innerHTML = '';
-                document.getElementById('qrsecr').innerHTML = '';
-                const qraddr = new QRCode("qraddr");
-                const qrsecr = new QRCode("qrsecr");
-                qraddr.makeCode(wallet["address"]);
-                document.getElementById('addrtext').innerHTML = wallet['address'];
-                qrsecr.makeCode(wallet["secret"]);
-                document.getElementById('secrtext').innerHTML = wallet['secret'];
+                // let qrcode = new QRCode("qrcode");
+                //
+                // qrcode.makeCode('hello world');
+
+
+                // document.getElementById('qraddr').innerHTML = '';
+                // document.getElementById('qrsecr').innerHTML = '';
+                // const qraddr = new QRCode("qraddr");
+                // const qrsecr = new QRCode("qrsecr");
+                // qraddr.makeCode(wallet["address"]);
+                // document.getElementById('addrtext').innerHTML = wallet['address'];
+                // qrsecr.makeCode(wallet["secret"]);
+                // document.getElementById('secrtext').innerHTML = wallet['secret'];
+
+
             },
 
 
 
-        }
+        },
+
+
+
+
     }
 
 
@@ -112,6 +158,13 @@
 </script>
 
 <style>
+
+
+    #qrcode {
+        width:160px;
+        height:160px;
+        margin-top:15px;
+    }
 
     .wallet-card {
         position: relative;
