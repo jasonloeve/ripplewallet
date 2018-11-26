@@ -136,6 +136,13 @@
 </script>
 
 <style>
+
+    div#qraddr, div#qrsecr {
+        background: #fff;
+        padding: 10px;
+        max-width: 210px;
+    }
+
     #qrcode {
         width:160px;
         height:160px;
