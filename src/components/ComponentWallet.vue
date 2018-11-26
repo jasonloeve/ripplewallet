@@ -46,7 +46,7 @@
 </template>
 
 <script>
-
+    import keypairs from 'ripple-keypairs';
     import QRCode from 'qrcode-js-package';
 
     export default {
@@ -59,75 +59,88 @@
             }
         },
         methods: {
-            init(){
+            generateWallet: function () {
 
-                document.getElementById("qrcode").innerHTML = '';
-                const qrcode = new QRCode("qrcode");
-                qrcode.makeCode("rGiZXoQavp6BJQhJnoXuvWzq4a4B33NWjX");
+                // =========================
+                // Generate a XRP wallet using keypairs
+                // =========================
 
-                console.log('Wallet onload triggered');
+                const secret = keypairs.generateSeed();
+                const keypair = keypairs.deriveKeypair(secret);
+                const address = keypairs.deriveAddress(keypair.publicKey);
 
-                // document.getElementById('qraddr').innerHTML = '';
-                // document.getElementById('qrsecr').innerHTML = '';
-                // const qraddr = new QRCode("qraddr");
-                // const qrsecr = new QRCode("qrsecr");
-                // qraddr.makeCode(wallet["address"]);
-                // qrsecr.makeCode(wallet["secret"]);
-                // document.getElementById('addrtext').innerHTML = wallet['address'];
-                // document.getElementById('secrtext').innerHTML = wallet['secret'];
+                // document.getElementById('addrtext').innerHTML = address;
+                // document.getElementById('secrtext').innerHTML = secret;
+
+                // =========================
+                // Generate QR codes for public and private address
+                // =========================
+
+                let qrcode = new QRCode("qrcode");
+
+                document.getElementById('qraddr').innerHTML = '';
+                document.getElementById('qrsecr').innerHTML = '';
+
+                const qraddr = new QRCode("qraddr");
+                const qrsecr = new QRCode("qrsecr");
+
+                qraddr.makeCode(address);
+                qrsecr.makeCode(secret);
+
+                document.getElementById('addrtext').innerHTML = address;
+                document.getElementById('secrtext').innerHTML = secret;
+
+
+
+                // const seed = (process.argv.length==3) ? process.argv[2] : keypairs.generateSeed();
+                // const keypair = keypairs.deriveKeypair(seed);
+
+                // console.log("Ripple-address: " + keypairs.deriveAddress(keypair.publicKey));
+                // console.log("Ripple-secret:  " + seed);
+
+                // const rippleKeyPairs = new rippleKeyPairs();
+                // const secret = rippleKeyPairs.generateSeed();
+                // const keypair = rippleKeyPairs.deriveKeypair(secret);
+                // const address = rippleKeyPairs.deriveAddress(keypair.publicKey);
+                // return {"address" : address, "secret" : secret};
+                // console.log(address);
+
+                // const seed = generateSeed();
+                // const keypair = deriveKeypair(seed);
+                // const address = deriveAddress(keypair.publicKey);
+                // return {"address" : address, "secret" : seed};
+                // var seed = rk.generateSeed();
+                // var keypair = rk.deriveKeypair(seed);
+                // var address = rk.deriveAddress(keypair.publicKey);
+
             },
-
-            // generateWallet: function () {
-            //
-            //     alert('Generate Triggered');
-            //
-            //     const seed = generateSeed();
-            //     const keypair = deriveKeypair(seed);
-            //     const address = deriveAddress(keypair.publicKey);
-            //     return {"address" : address, "secret" : seed};
-            //
-            // },
-            //
             generate: function () {
 
-                //const wallet = this.generateWallet();
+                // =========================
+                // On click generate a new public & private address pair
+                // =========================
 
-                // ==============
-                // Generate QR for Public & Private addresses
-                // ==============
-
-                // let qrcode = new QRCode("qrcode");
-                //
-                // qrcode.makeCode('hello world');
-
-
-                // document.getElementById('qraddr').innerHTML = '';
-                // document.getElementById('qrsecr').innerHTML = '';
-                // const qraddr = new QRCode("qraddr");
-                // const qrsecr = new QRCode("qrsecr");
-                // qraddr.makeCode(wallet["address"]);
-                // document.getElementById('addrtext').innerHTML = wallet['address'];
-                // qrsecr.makeCode(wallet["secret"]);
-                // document.getElementById('secrtext').innerHTML = wallet['secret'];
-
+                //this.generateWallet();
 
             }
         },
         mounted: function(){
-            this.init()
+
+            // =========================
+            // Init load give us a random public & private address
+            // =========================
+
+            this.generateWallet();
         }
     }
 </script>
 
 <style>
-
-
     #qrcode {
         width:160px;
         height:160px;
         margin-top:15px;
     }
-
     .wallet-card {
         position: relative;
         color: black;
@@ -149,5 +162,4 @@
         -webkit-box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
         box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
     }
-
 </style>
