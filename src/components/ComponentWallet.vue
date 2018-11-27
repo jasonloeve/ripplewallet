@@ -20,18 +20,15 @@
                 <div class="wallet-copy">
                     {{ walletCopy }}
                 </div>
-                <!--<div class="wallet-logo">-->
-                    <!--<img class="logo initial_logo" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/logo/ripple-logo-white.png">-->
-                <!--</div>-->
             </div>
         </div>
         <br><br>
         <div class="wallet-triggers">
-            <button class="button is-primary is-medium" title="Generate new" @click="generate">
-                Generate XRP Wallet &nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i>
+            <button class="button is-primary is-medium" title="{{ btnOne }}" @click="generate">
+                {{ btnOne }} <i class="fa fa-credit-card" aria-hidden="true"></i>
             </button> &nbsp;
-            <button class="button is-primary is-medium" onclick="window.print()" title="Print">
-                Print XRP Wallet &nbsp;<i class="fa fa-print" aria-hidden="true"></i>
+            <button class="button is-primary is-medium" title="{{ btnTwo }}" @click="print">
+                {{ btnTwo }} <i class="fa fa-print" aria-hidden="true"></i>
             </button>
         </div>
     </div>
@@ -47,6 +44,8 @@
                 sectionHeading: 'Generate A Ripple Paper Wallet',
                 sectionSubHeading: 'Create your own Ripple paper wallet for safe long-term storage of your investment.',
                 walletCopy: 'All you need to know about Ripple paper wallets, Crypto currency security and how to restore your funds to start trading.',
+                btnOne: 'Generate XRP Wallet',
+                btnTwo: 'Print XRP Wallet'
             }
         },
         methods: {
@@ -76,24 +75,6 @@
                 document.getElementById('address-public-text').innerHTML = address;
                 document.getElementById('address-private-text').innerHTML = secret;
 
-                // const seed = (process.argv.length==3) ? process.argv[2] : keypairs.generateSeed();
-                // const keypair = keypairs.deriveKeypair(seed);
-                // console.log("Ripple-address: " + keypairs.deriveAddress(keypair.publicKey));
-                // console.log("Ripple-secret:  " + seed);
-                // const rippleKeyPairs = new rippleKeyPairs();
-                // const secret = rippleKeyPairs.generateSeed();
-                // const keypair = rippleKeyPairs.deriveKeypair(secret);
-                // const address = rippleKeyPairs.deriveAddress(keypair.publicKey);
-                // return {"address" : address, "secret" : secret};
-                // console.log(address);
-                // const seed = generateSeed();
-                // const keypair = deriveKeypair(seed);
-                // const address = deriveAddress(keypair.publicKey);
-                // return {"address" : address, "secret" : seed};
-                // var seed = rk.generateSeed();
-                // var keypair = rk.deriveKeypair(seed);
-                // var address = rk.deriveAddress(keypair.publicKey);
-
             },
             generate: function (e) {
 
@@ -104,6 +85,17 @@
                 e.preventDefault();
                 this.generateWallet();
                 console.log('Generate address');
+
+            },
+            print: function (e) {
+
+                // =========================
+                // On click print page
+                // =========================
+
+                e.preventDefault();
+                window.print();
+
             }
         },
         mounted: function(){
@@ -113,6 +105,7 @@
             // =========================
 
             this.generateWallet();
+
         }
     }
 </script>
