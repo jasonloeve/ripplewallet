@@ -59,7 +59,9 @@
         },
         methods: {
             toggle: function (e) {
+
                 e.preventDefault();
+
                 let $this = $('.toggle');
                 if ($this.next().hasClass('show')) {
                     $this.next().removeClass('show');
@@ -75,6 +77,44 @@
     }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    ul {
+        list-style: none;
+        padding: 0;
+        .inner {
+            padding-left: 1em;
+            overflow: hidden;
+            display: none;
+            &.show {
+                border: 1px solid #cccccc;
+                padding: .75em;
+            }
+        }
+        li {
+            margin: .5em 0;
+            a {
+                &.toggle {
+                    width: 100%;
+                    display: block;
+                    border: 1px solid #cccccc;
+                    padding: .75em;
+                    transition: background .3s ease;
+                    margin-bottom: 8px;
+                    color: #363636;
+                    text-transform: uppercase;
+                    &:after {
+                        content: '\f067';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: normal;
+                        font-style: normal;
+                        margin: 0px 0px 0px 10px;
+                        text-decoration: none;
+                        color: #06abfe;
+                        color: #cccccc;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
 </style>

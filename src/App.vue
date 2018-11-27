@@ -12,7 +12,6 @@
     import SectionFaq from './components/SectionFaq'
     import SectionStats from './components/SectionStats'
     import AppFooter from './components/AppFooter'
-
     export default {
         name: 'app',
         components: {
@@ -24,8 +23,8 @@
     }
 </script>
 
-<style>
+<style lang="scss">
     /*https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js*/
-    @import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
-    @import './assets/scss/app.scss';
+
+    //@import './assets/scss/app.scss';
 </style>

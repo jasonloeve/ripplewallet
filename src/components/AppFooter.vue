@@ -29,6 +29,29 @@
     }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    .section-footer {
+        position: relative;
+        overflow: hidden;
+        &:after {
+            background: inherit;
+            bottom: 0;
+            content: '';
+            display: block;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            transform: skewY(-1.5deg);
+            transform-origin: 100%;
+            z-index: -1;
+            background: #e2e2e2;
+        }
+        .donation-block {
+            background: #0594ff;
+            text-align: center;
+            padding: 15px;
+            color: #ffffff;
+        }
+    }
 </style>

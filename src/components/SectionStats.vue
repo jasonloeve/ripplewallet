@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section class="section section-stats">
         <div class="container is-narrow">
             <h1 class="title">{{ sectionHeading }}</h1>
             <span class="disc">{{ sectionSubHeading }}</span>
@@ -39,18 +39,29 @@
     }
 </script>
 
-<style>
-    .intrinsic-container {
-        position: relative;
-        height: 0;
-        overflow: hidden;
-        padding-bottom: 56.25%;
-    }
-    .intrinsic-container iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+<style lang="scss" scoped>
+    .section-stats {
+        .ripple-stats {
+            width: 100%;
+            display: block;
+            border: 1px solid #cccccc;
+            padding: .75em;
+            transition: background .3s ease;
+            margin-bottom: 8px;
+            color: #363636;
+            .intrinsic-container {
+                position: relative;
+                height: 0;
+                overflow: hidden;
+                padding-bottom: 56.25%;
+                iframe {
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
     }
 </style>

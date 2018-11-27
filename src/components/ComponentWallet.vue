@@ -1,40 +1,32 @@
 <template>
-    <div>
-        <div class="wallet-card" id="paper">
-            <!-- ======================= -->
-            <!-- Where the magic happens -->
-            <!-- ======================= -->
-            <div id="left">
+    <div class="wallet-wrapper">
+        <div class="wallet-card">
+            <div class="address-left">
                 <span>Ripple Address</span>
-                <div id="qraddr" class="qr"></div>
-                <!--Temp testing-->
-                <div id="qrcode" class="qr"></div>
+                <div id="qr-address-public"></div>
             </div>
-            <div id="address">
-                <span id="addrtext"></span>
+            <div class="address-public">
+                <span id="address-public-text"></span>
             </div>
-            <div id="void"></div>
-            <div id="secret">
-                <span id="secrtext"></span>
+            <div class="spacer"></div>
+            <div class="address-private">
+                <span id="address-private-text"></span>
             </div>
-            <div id="right">
+            <div class="address-right">
                 <span>Secret Key - Keep Safe</span>
-                <div id="qrsecr" class="qr"></div>
+                <div id="qr-address-private"></div>
             </div>
             <div class="wallet-info">
                 <div class="wallet-copy">
                     {{ walletCopy }}
                 </div>
-                <div class="wallet-logo">
+                <!--<div class="wallet-logo">-->
                     <!--<img class="logo initial_logo" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/logo/ripple-logo-white.png">-->
-                </div>
+                <!--</div>-->
             </div>
-            <!-- ======================= -->
-            <!-- Where the magic happens -->
-            <!-- ======================= -->
         </div>
         <br><br>
-        <div class="button-holder has-text-centered">
+        <div class="wallet-triggers">
             <button class="button is-primary is-medium" title="Generate new" @click="generate">
                 Generate XRP Wallet &nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i>
             </button> &nbsp;
@@ -48,7 +40,6 @@
 <script>
     import keypairs from 'ripple-keypairs';
     import QRCode from 'qrcode-js-package';
-
     export default {
         name: 'ComponentWallet',
         data () {
@@ -69,42 +60,32 @@
                 const keypair = keypairs.deriveKeypair(secret);
                 const address = keypairs.deriveAddress(keypair.publicKey);
 
-                // document.getElementById('addrtext').innerHTML = address;
-                // document.getElementById('secrtext').innerHTML = secret;
-
                 // =========================
                 // Generate QR codes for public and private address
                 // =========================
 
-                let qrcode = new QRCode("qrcode");
+                document.getElementById('qr-address-public').innerHTML = '';
+                document.getElementById('qr-address-private').innerHTML = '';
 
-                document.getElementById('qraddr').innerHTML = '';
-                document.getElementById('qrsecr').innerHTML = '';
+                const qrpublic = new QRCode('qr-address-public');
+                const qrprivate = new QRCode('qr-address-private');
 
-                const qraddr = new QRCode("qraddr");
-                const qrsecr = new QRCode("qrsecr");
+                qrpublic.makeCode(address);
+                qrprivate.makeCode(secret);
 
-                qraddr.makeCode(address);
-                qrsecr.makeCode(secret);
-
-                document.getElementById('addrtext').innerHTML = address;
-                document.getElementById('secrtext').innerHTML = secret;
-
-
+                document.getElementById('address-public-text').innerHTML = address;
+                document.getElementById('address-private-text').innerHTML = secret;
 
                 // const seed = (process.argv.length==3) ? process.argv[2] : keypairs.generateSeed();
                 // const keypair = keypairs.deriveKeypair(seed);
-
                 // console.log("Ripple-address: " + keypairs.deriveAddress(keypair.publicKey));
                 // console.log("Ripple-secret:  " + seed);
-
                 // const rippleKeyPairs = new rippleKeyPairs();
                 // const secret = rippleKeyPairs.generateSeed();
                 // const keypair = rippleKeyPairs.deriveKeypair(secret);
                 // const address = rippleKeyPairs.deriveAddress(keypair.publicKey);
                 // return {"address" : address, "secret" : secret};
                 // console.log(address);
-
                 // const seed = generateSeed();
                 // const keypair = deriveKeypair(seed);
                 // const address = deriveAddress(keypair.publicKey);
@@ -114,14 +95,15 @@
                 // var address = rk.deriveAddress(keypair.publicKey);
 
             },
-            generate: function () {
+            generate: function (e) {
 
                 // =========================
                 // On click generate a new public & private address pair
                 // =========================
 
-                //this.generateWallet();
-
+                e.preventDefault();
+                this.generateWallet();
+                console.log('Generate address');
             }
         },
         mounted: function(){
@@ -135,38 +117,102 @@
     }
 </script>
 
-<style>
-
-    div#qraddr, div#qrsecr {
-        background: #fff;
-        padding: 10px;
-        max-width: 210px;
-    }
-
-    #qrcode {
-        width:160px;
-        height:160px;
-        margin-top:15px;
-    }
-    .wallet-card {
-        position: relative;
-        color: black;
-        margin: auto;
-        display: block;
-        background-image: url('../assets/img/xrp-moon.png') ;
-        background-color: #0594ff;
-        background-size: 180px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        border: 1px solid #007ad6;
-        border-right: none;
-        border-left: none;
-        padding: 30px;
-        width: 100%;
-        height: 320px;
-        z-index: 999999;
-        border-radius: 0;
-        -webkit-box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
-        box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+<style lang="scss" scoped>
+    .wallet-wrapper {
+        .wallet-card {
+            position: relative;
+            color: black;
+            margin: auto;
+            display: block;
+            background-image: url('../assets/img/xrp-moon.png') ;
+            background-color: #0594ff;
+            background-size: 180px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border: 1px solid #007ad6;
+            border-right: none;
+            border-left: none;
+            padding: 30px;
+            width: 100%;
+            height: 320px;
+            z-index: 999999;
+            border-radius: 0;
+            -webkit-box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+            .address {
+                &-left,
+                &-right {
+                    position: absolute;
+                    top: 14px;
+                    span {
+                        margin-bottom: 10px;
+                        display: block;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                    }
+                }
+                &-left {
+                    left: 64px;
+                }
+                &-right {
+                    right: 64px;
+                }
+            }
+            #qr-address-public,
+            #qr-address-private {
+                background: #ffffff;
+                padding: 10px;
+                max-width: 200px;
+            }
+            .address-private,
+            .address-public {
+                background: #ffffff;
+                position: absolute;
+                top: 0px;
+                padding: 10px;
+                width: 320px;
+                text-align: center;
+            }
+            .address-private {
+                right: 44px;
+                transform-origin: 100% 0;
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            }
+            .address-public {
+                left: 44px;
+                transform-origin: 0 0;
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            }
+            .wallet-info {
+                display: block;
+                position: absolute;
+                bottom: 16px;
+                margin: 0 36px;
+                color: #ffffff;
+                font-size: 14px;
+                width: 100%;
+                .wallet-logo {
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+                .wallet-copy {
+                    max-width: 400px;
+                    display: inline-block;
+                }
+            }
+        }
+        .wallet-triggers {
+            text-align: center;
+        }
     }
 </style>

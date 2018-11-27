@@ -3,6 +3,7 @@ node_modules
 /dist
 STATICBUILD
 NOTES.md
+development
 
 # local env files
 .env.local

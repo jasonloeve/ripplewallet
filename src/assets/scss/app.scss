@@ -1,3 +1,5 @@
+
+/*! Compile test */
 body {
     font-family: 'Ubuntu Condensed', sans-serif;
     //font-family: 'Rajdhani', sans-serif;
@@ -42,31 +44,7 @@ h1.title {
 
 
 
-section.section.section-footer {
-    position: relative;
-    overflow: hidden;
-}
 
-.section-footer:after {
-    background: inherit;
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform: skewY(-1.5deg);
-    transform-origin: 100%;
-    z-index: -1;
-    background: #e2e2e2;
-}
-.donation-block {
-    background: #0594ff;
-    text-align: center;
-    padding: 15px;
-    color: #ffffff;
-}
 
 
 
@@ -100,80 +78,10 @@ section.section.section-footer {
 
 
 
-div#left {
-    position: absolute;
-    left: 64px;
-    top: 14px;
-    span {
-        margin-bottom: 10px;
-        display: block;
-        color: #ffffff;
-        text-transform: uppercase;
-    }
-}
-
-div#right {
-    position: absolute;
-    right: 64px;
-    top: 14px;
-    span {
-        margin-bottom: 10px;
-        display: block;
-        color: #ffffff;
-        text-transform: uppercase;
-    }
-}
-
-
-
-div#secret {
-    background: #ffffff;
-    position: absolute;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    right: 44px;
-    top: 0;
-    padding: 10px;
-    transform-origin: 100% 0;
-    width: 320px;
-    text-align: center;
-}
 
 
 
 
-div#address {
-    background: #ffffff;
-    position: absolute;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    left: 44px;
-    top: 0px;
-    padding: 10px;
-    transform-origin: 0 0;
-    width: 320px;
-    text-align: center;
-}
-
-
-
-
-div#qraddr {
-    background: #ffffff;
-    padding: 10px;
-
-}
-
-div#qrsecr {
-    background: #ffffff;
-    padding: 10px;
-}
 
 
 .is-narrow {
@@ -202,15 +110,7 @@ span.disc {
 
 
 
-.ripple-stats {
-    width: 100%;
-    display: block;
-    border: 1px solid #cccccc;
-    padding: .75em;
-    transition: background .3s ease;
-    margin-bottom: 8px;
-    color: #363636;
-}
+
 
 
 
@@ -220,71 +120,8 @@ span.disc {
 }
 
 
-.wallet-info {
-    display: block;
-    position: absolute;
-    bottom: 16px;
-    margin: 0 36px;
-    color: #ffffff;
-    font-size: 14px;
-    width: 100%;
-}
-.wallet-logo {
-    display: inline-block;
-    /* float: right; */
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-.wallet-copy {
-    max-width: 400px;
-    display: inline-block;
-}
 
 
 
 
 
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-ul .inner {
-    padding-left: 1em;
-    overflow: hidden;
-    display: none;
-}
-ul .inner.show {
-    /*display: block;*/
-}
-ul li {
-    margin: .5em 0;
-}
-ul li a.toggle {
-    width: 100%;
-    display: block;
-    border: 1px solid #cccccc;
-    padding: .75em;
-    transition: background .3s ease;
-    margin-bottom: 8px;
-    color: #363636;
-    text-transform: uppercase;
-}
-ul.inner.show {
-    border: 1px solid #cccccc;
-    padding: .75em;
-    // margin-top: 8px;
-}
-
-a.toggle:after {
-    content: '\f067';
-    font-family: "Font Awesome 5 Free";
-    font-weight: normal;
-    font-style: normal;
-    margin: 0px 0px 0px 10px;
-    text-decoration: none;
-    color: #06abfe;
-    color: #cccccc;
-    float: right;
-}
