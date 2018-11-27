@@ -24,11 +24,11 @@
         </div>
         <br><br>
         <div class="wallet-triggers">
-            <button class="button is-primary is-medium" title="{{ btnOne }}" @click="generate">
-                {{ btnOne }} <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <button class="button is-primary is-medium" title="btnOne" @click="generate">
+                {{ btnOne }} <i class="far fa-credit-card"></i>
             </button> &nbsp;
-            <button class="button is-primary is-medium" title="{{ btnTwo }}" @click="print">
-                {{ btnTwo }} <i class="fa fa-print" aria-hidden="true"></i>
+            <button class="button is-primary is-medium" title="btnTwo" @click="print">
+                {{ btnTwo }} <i class="fas fa-print"></i>
             </button>
         </div>
     </div>
@@ -155,6 +155,12 @@
                 background: #ffffff;
                 padding: 10px;
                 max-width: 200px;
+                img {
+                    max-width: 200px;
+                }
+                canvas {
+                    max-width: 200px;
+                }
             }
             .address-private,
             .address-public {

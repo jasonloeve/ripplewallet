@@ -2,59 +2,12 @@
 /*! Compile test */
 body {
     font-family: 'Ubuntu Condensed', sans-serif;
-    //font-family: 'Rajdhani', sans-serif;
 }
-
 
 h1.title {
     font-weight: normal;
     text-transform: uppercase;
 }
-
-
-.hero {
-    background-color: #0494fe;
-    height: 500px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 150px;
-    color: #ffffff;
-    h1.title {
-        color: #ffffff;
-        &:after {
-            background: #ffffff;
-        }
-    }
-    &:after {
-        background: inherit;
-        bottom: 0;
-        content: '';
-        display: block;
-        height: 50%;
-        left: 0;
-        position: absolute;
-        right: 0;
-        transform: skewY(-1.5deg);
-        transform-origin: 100%;
-        z-index: -1;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .quote {
     background: #41ade5;
@@ -63,35 +16,9 @@ h1.title {
     z-index: 1;
 }
 
-
-
-.float-content {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: -150px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 .is-narrow {
     max-width: 760px;
 }
-
-
-
-
-
 h1.title:after {
     content: "";
     display: block;
@@ -101,26 +28,19 @@ h1.title:after {
     margin: 15px 0 0 -20px;
     background: #cccccc;
 }
-
 span.disc {
     max-width: 440px;
     display: block;
 }
-
-
-
-
-
-
-
-
 
 .description {
     margin: 1em auto 2.25em;
 }
 
 
-
+.button.is-primary {
+    background-color: #0794fc;
+}
 
 
 

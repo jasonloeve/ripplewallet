@@ -1,6 +1,5 @@
-import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free';
-//import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+import 'bulma/css/bulma.css';
 import './assets/scss/app.scss';
 
 import Vue from 'vue';

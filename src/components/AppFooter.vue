@@ -23,7 +23,7 @@
                 sectionHeading: 'Donations Welcome',
                 sectionSubHeading: 'Help us keep this site alive, If you like what you see or if you\'ve found this site useful then please consider sending us a donation for upkeep.',
                 donationAddress: 'XRP Donations - rGiZXoQavp6BJQhJnoXuvWzq4a4B33NWjX',
-                copyright: 'Dev by Algorithm NZ | Terms of Use | Copyright in Code | Secured By Let\'s Encrypt'
+                copyright: 'Crafted by Algorithm NZ | Secured by Let\'s Encrypt'
             }
         }
     }

@@ -3,7 +3,7 @@
         <div class="container is-narrow">
             <h1 class="title">{{ sectionHeading }}</h1>
             <span class="disc">{{ sectionSubHeading }}</span>
-            <br><br>
+            <br>
         </div>
         <div class="container is-narrow">
             <div class="columns">
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+
+
     export default {
         name: 'SectionStats',
         data () {

@@ -6,7 +6,7 @@
             <br>
             <ul class="accordion">
                 <li v-for="faq in faqs" v-bind:key="faq.id">
-                    <a class="toggle" @click="toggle">{{ faq.faqQuestion }} <i class="fas fa-plus"></i></a>
+                    <a class="toggle" @click="toggle">{{ faq.faqQuestion }}</a>
                     <ul class="inner">
                         {{ faq.faqAnswer }}
                     </ul>
@@ -59,9 +59,7 @@
         },
         methods: {
             toggle: function (e) {
-
                 e.preventDefault();
-
                 let $this = $('.toggle');
                 if ($this.next().hasClass('show')) {
                     $this.next().removeClass('show');

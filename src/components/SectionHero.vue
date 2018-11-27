@@ -1,5 +1,5 @@
 <template>
-    <section class="section hero" id="particles-js">
+    <section class="section section-hero" id="particles-js">
         <div class="float-content">
             <div class="container is-narrow">
                 <h1 class="title">{{ sectionHeading }}</h1>
@@ -9,8 +9,6 @@
             </div>
         </div>
     </section>
-
-
 </template>
 
 <script>
@@ -150,6 +148,39 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    .section-hero {
+        background-color: #0494fe;
+        height: 500px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 150px;
+        color: #ffffff;
+        h1.title {
+            color: #ffffff;
+            &:after {
+                background: #ffffff;
+            }
+        }
+        &:after {
+            background: inherit;
+            bottom: 0;
+            content: '';
+            display: block;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            transform: skewY(-1.5deg);
+            transform-origin: 100%;
+            z-index: -1;
+        }
 
+        .float-content {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: -150px;
+        }
+    }
 </style>
