@@ -11,3 +11,9 @@
 [X] Setup quick deployments methods (ShipIt, BuddyWorks, Etc ...).
 
 [] Configure ShipIt to repo & servers.
+
+[] Fixing of FontAwesome Icons.
+
+[] Building tests.
+
+[] Write detailed project starter guide.
