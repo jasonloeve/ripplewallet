@@ -24,7 +24,5 @@
 </script>
 
 <style lang="scss">
-    /*https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js*/
 
-    //@import './assets/scss/app.scss';
 </style>

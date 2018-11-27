@@ -1,6 +1,6 @@
 # ripple-wallet
 
-<p align="center"><img src="https://raw.githubusercontent.com/jasonloeve/ripplewallet/master/development/img/snapshot.png" alt="XRP Wallet Design"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jasonloeve/ripplewallet/master/snapshot.png" alt="XRP Wallet Design"></p>
 
 ## Project setup
 ```

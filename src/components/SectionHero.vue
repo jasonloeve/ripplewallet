@@ -1,8 +1,5 @@
 <template>
     <section class="section hero" id="particles-js">
-        <!--<img alt="Vue logo" src="./assets/images/logo.png">-->
-        <!--onload="generate()"-->
-        <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
         <div class="float-content">
             <div class="container is-narrow">
                 <h1 class="title">{{ sectionHeading }}</h1>

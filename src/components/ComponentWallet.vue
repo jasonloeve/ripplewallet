@@ -119,7 +119,7 @@
             display: block;
             background-image: url('../assets/img/xrp-moon.png') ;
             background-color: #0594ff;
-            background-size: 180px;
+            background-size: 170px;
             background-repeat: no-repeat;
             background-position: center center;
             border: 1px solid #007ad6;
@@ -130,7 +130,6 @@
             height: 320px;
             z-index: 999999;
             border-radius: 0;
-            -webkit-box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
             box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
             .address {
                 &-left,
