@@ -84,7 +84,6 @@
 
                 e.preventDefault();
                 this.generateWallet();
-                console.log('Generate address');
 
             },
             print: function (e) {
@@ -113,6 +112,7 @@
 <style lang="scss" scoped>
     .wallet-wrapper {
         .wallet-card {
+            font-size: 14px;
             position: relative;
             color: black;
             margin: auto;
@@ -172,7 +172,7 @@
                 text-align: center;
             }
             .address-private {
-                right: 44px;
+                right: 40px;
                 transform-origin: 100% 0;
                 -webkit-transform: rotate(-90deg);
                 -moz-transform: rotate(-90deg);
@@ -181,7 +181,7 @@
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
             }
             .address-public {
-                left: 44px;
+                left: 40px;
                 transform-origin: 0 0;
                 -webkit-transform: rotate(90deg);
                 -moz-transform: rotate(90deg);

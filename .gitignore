@@ -4,6 +4,7 @@ node_modules
 STATICBUILD
 NOTES.md
 development
+.idea
 
 # local env files
 .env.local

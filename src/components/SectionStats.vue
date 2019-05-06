@@ -10,6 +10,18 @@
                 <div class="column is-8">
                     <div class="ripple-stats">
                         <div class="intrinsic-container">
+                            <!--<div-->
+                                    <!--class="coinmarketcap-currency-widget"-->
+                                    <!--data-currencyid="52"-->
+                                    <!--data-base="USD"-->
+                                    <!--data-secondary="BTC"-->
+                                    <!--data-ticker="true"-->
+                                    <!--data-rank="true"-->
+                                    <!--data-marketcap="true"-->
+                                    <!--data-volume="true"-->
+                                    <!--data-stats="USD"-->
+                                    <!--data-statsticker="false"-->
+                            <!--&gt;</div>-->
                             <iframe v-bind:src=statsDataApi allowfullscreen></iframe>
                         </div>
                     </div>
@@ -25,8 +37,6 @@
 </template>
 
 <script>
-
-
     export default {
         name: 'SectionStats',
         data () {
@@ -34,10 +44,15 @@
                 sectionHeading: 'Ripple Current Stats',
                 sectionSubHeading: 'XRP current stats and forecast.',
                 statsDataApi: 'https://api.ripplewallet.tech/',
-                bannerAd: 'http://via.placeholder.com/350x500',
+                bannerAd: 'http://via.placeholder.com/350x430',
                 bannerAdLink: 'https://placeholder.com'
             }
-        }
+        },
+        mounted() {
+            // let cmcScript = document.createElement('script');
+            // cmcScript.setAttribute('src', 'https://files.coinmarketcap.com/static/widget/currency.js');
+            // document.head.appendChild(cmcScript)
+        },
     }
 </script>
 
