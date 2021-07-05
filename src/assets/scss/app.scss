@@ -19,6 +19,7 @@ h1.title {
 .is-narrow {
     max-width: 760px;
 }
+
 h1.title:after {
     content: "";
     display: block;
@@ -28,6 +29,7 @@ h1.title:after {
     margin: 15px 0 0 -20px;
     background: #cccccc;
 }
+
 span.disc {
     max-width: 440px;
     display: block;
@@ -37,11 +39,6 @@ span.disc {
     margin: 1em auto 2.25em;
 }
 
-
 .button.is-primary {
     background-color: #0794fc;
 }
-
-
-
-

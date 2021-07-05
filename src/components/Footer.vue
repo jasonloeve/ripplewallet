@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: 'AppFooter',
+        name: 'Footer',
         data () {
             return {
                 sectionHeading: 'Donations Welcome',
@@ -33,8 +33,8 @@
     .section-footer {
         position: relative;
         overflow: hidden;
+
         &:after {
-            background: inherit;
             bottom: 0;
             content: '';
             display: block;
@@ -47,6 +47,7 @@
             z-index: -1;
             background: #e2e2e2;
         }
+
         .donation-block {
             background: #0594ff;
             text-align: center;
